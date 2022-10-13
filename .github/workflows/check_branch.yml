@@ -7,8 +7,8 @@ on:
      - main
 
 jobs:
-  run_if:
-    if: startsWith(github.head_ref, 's[fioap]p-')
+  build:
+    #if: startsWith(github.head_ref, 's[fioap]p-')
     runs-on: ubuntu-latest
     name: "check protocol"
     env:
