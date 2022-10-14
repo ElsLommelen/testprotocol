@@ -8,7 +8,11 @@ on:
 
 jobs:
   build:
-    #if: startsWith(github.head_ref, 's[fioap]p-')
+    if: startsWith(github.head_ref, 'sfp-')
+      || startsWith(github.head_ref, 'sip-')
+      || startsWith(github.head_ref, 'sop-')
+      || startsWith(github.head_ref, 'sap-')
+      || startsWith(github.head_ref, 'spp-')
     runs-on: ubuntu-latest
     name: "check protocol"
     env:
