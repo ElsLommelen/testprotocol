@@ -16,10 +16,8 @@ jobs:
       || startsWith(github.head_ref, 'spp-'))
     runs-on: ubuntu-latest
     name: "update protocol"
-    env:
-      GITHUB_PAT: ${{ secrets.PAT }}
     steps:
       - name: Update protocol
         uses: ElsLommelen/actions/protocol_update@protocols
         with:
-          GITHUB_PAT: ${{ secrets.PAT }}
+          PAT: ${{ secrets.PAT }}
