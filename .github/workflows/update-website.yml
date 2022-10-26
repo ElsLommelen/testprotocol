@@ -1,4 +1,4 @@
-name: On merge to main, build the protocol and add it to the website
+name: On merge of "Log RECENT_MERGED_BRANCH_NAME" to main, build the protocol and add it to the website
 
 on:
   push:
@@ -6,6 +6,12 @@ on:
      - main
 
 jobs:
+  get-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: tonynguyenit18/github-action-custom-vars@v1
+      - run: echo 'branch name = ' $RECENT_MERGED_BRANCH_NAME
   build-website:
     runs-on: ubuntu-latest
     name: "add protocol to website"
@@ -15,3 +21,4 @@ jobs:
         with:
           PAT: ${{ secrets.PAT }}
           GITHUB_REPOSITORY_DEST: "ElsLommelen/protocols"
+          RECENT_MERGED_BRANCH_NAME: $RECENT_MERGED_BRANCH_NAME
