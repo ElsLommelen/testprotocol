@@ -15,13 +15,13 @@ jobs:
       - uses: tonynguyenit18/github-action-custom-vars@v1
         id: lookup
       - name: test
-        run: echo 'branch name = ' $RECENT_MERGED_BRANCH_NAME
+        run: echo 'branch name =' env.RECENT_MERGED_BRANCH_NAME
       - name: Checkout repo and build website
-        if: (startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, ' sfp-')
-          || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, ' sip-')
-          || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, ' sop-')
-          || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, ' sap-')
-          || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, ' spp-'))
+        if: (startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sfp-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sip-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sop-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sap-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'spp-'))
         uses: ElsLommelen/actions/protocol_website@protocols
         with:
           PAT: ${{ secrets.PAT }}
