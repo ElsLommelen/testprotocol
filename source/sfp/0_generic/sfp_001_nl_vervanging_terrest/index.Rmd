@@ -1,29 +1,31 @@
 ---
 title: Vervangprocedure voor geselecteerde steekproefeenheden van terrestrische types
-subtitle:  
+subtitle: null
 author:
-  - name: Toon Westra
-    orcid: 0000-0003-2478-9459
-date: "`r Sys.Date()`"
-reviewers: [Patrik Oosterlynck,Floris Vanderhaeghe]
+- name: Toon Westra
+  orcid: 0000-0003-2478-9459
+date: '`r Sys.Date()`'
+reviewers:
+- Patrik Oosterlynck
+- Floris Vanderhaeghe
 file_manager: Toon Westra
 protocol_code: sfp-001-nl
-version_number: "2020.01.dev"
+version_number: '2022.02'
 language: nl
 theme: generic
 site: bookdown::bookdown_site
-output: 
+output:
   bookdown::gitbook:
     split_by: none
-    split_bib: FALSE
-    template: !expr protocolhelper::protocol_css()
+    split_bib: false
+    template: css/gitbook.html
     css: css/inbo_rapport.css
     config:
-       toc:
-         before: |
-           <li class="toc-logo"><a href="./"><img src="css/img/inbo-nl.jpg"></a></li>
+      toc:
+        before: |
+          <li class="toc-logo"><a href="./"><img src="css/img/inbo-nl.jpg"></a></li>
 bibliography: references_habitats.bib
-link-citations: TRUE
+link-citations: true
 ---
 
 ```{=html}
