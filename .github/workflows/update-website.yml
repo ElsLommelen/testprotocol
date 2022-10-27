@@ -17,11 +17,11 @@ jobs:
       - name: test
         run: echo 'branch name = ' $RECENT_MERGED_BRANCH_NAME
       - name: Checkout repo and build website
-        if: startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, 'sfp-')
+        if: (startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, 'sfp-')
           || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, 'sip-')
           || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, 'sop-')
           || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, 'sap-')
-          || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, 'spp-')
+          || startsWith(steps.lookup.outputs.RECENT_MERGED_BRANCH_NAME, 'spp-'))
         uses: ElsLommelen/actions/protocol_website@protocols
         with:
           PAT: ${{ secrets.PAT }}
