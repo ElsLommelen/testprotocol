@@ -16,13 +16,13 @@ jobs:
       - name: test
         run: echo 'branch name = ' $RECENT_MERGED_BRANCH_NAME
       - name: Checkout repo and build website
+        if: startsWith($RECENT_MERGED_BRANCH_NAME, 'sfp-')
+          || startsWith($RECENT_MERGED_BRANCH_NAME, 'sip-')
+          || startsWith($RECENT_MERGED_BRANCH_NAME, 'sop-')
+          || startsWith($RECENT_MERGED_BRANCH_NAME, 'sap-')
+          || startsWith($RECENT_MERGED_BRANCH_NAME, 'spp-')
         uses: ElsLommelen/actions/protocol_website@protocols
         with:
           PAT: ${{ secrets.PAT }}
           GITHUB_REPOSITORY_DEST: "ElsLommelen/protocols"
           RECENT_MERGED_BRANCH_NAME: $RECENT_MERGED_BRANCH_NAME
-        # if: ${{ startsWith(RECENT_MERGED_BRANCH_NAME, 'sfp-')
-        #   || startsWith(RECENT_MERGED_BRANCH_NAME, 'sip-')
-        #   || startsWith(RECENT_MERGED_BRANCH_NAME, 'sop-')
-        #   || startsWith(RECENT_MERGED_BRANCH_NAME, 'sap-')
-        #   || startsWith(RECENT_MERGED_BRANCH_NAME, 'spp-') }}
