@@ -1,3 +1,8 @@
+## Version 2022.01
+
+- Protocol code: sfp-001-nl
+- Title: Vervangprocedure voor geselecteerde steekproefeenheden van terrestrische types
+
 <!--One entry for each release describing the generic changes since the previous release.
 e.g. (sort most recent first)
 
