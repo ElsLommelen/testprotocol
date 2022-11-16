@@ -12,8 +12,8 @@ check_all <- function(protocol_code) {
       error = function(e) e
     )
   fail <-
-    (is.list(test1) && test1$message == "error") |
-      (is.list(test2) && test2$message == "error")
+    (inherits(test1, "error") |
+      (inherits(test2, "error"))
   if (fail) {
     stop("\nThe source code failed some checks. Please check the error message above.\n")
   }
