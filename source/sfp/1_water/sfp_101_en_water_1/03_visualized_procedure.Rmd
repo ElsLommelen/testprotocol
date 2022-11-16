@@ -1,5 +1,0 @@
-# Visualized procedure
-
-<!--
-Flowchart (can be optional but encouraged when helpful)
--->
