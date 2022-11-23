@@ -10,7 +10,7 @@ reviewers:
 - Floris Vanderhaeghe
 file_manager: Toon Westra
 protocol_code: sfp-001-nl
-version_number: '2022.02'
+version_number: '2022.03'
 language: nl
 theme: generic
 site: bookdown::bookdown_site
