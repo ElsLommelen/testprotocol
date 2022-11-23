@@ -1,0 +1,28 @@
+book_filename: sfp_101_en_water_1.Rmd
+output_dir: ../../../../docs/sfp/1_water/sfp_101_en_water_1
+rmd_files:
+- index.Rmd
+- NEWS.md
+- 01_abstract.Rmd
+- 02_preparations.Rmd
+- 03_visualized_procedure.Rmd
+- 04_steps_procedure.Rmd
+- 05_definitions.Rmd
+- 06_references.Rmd
+- 07_appendices.Rmd
+- 08_subprotocols.Rmd
+delete_merged_file: true
+language:
+  label:
+    fig: 'Figure '
+    tab: 'Table '
+    eq: 'Equation '
+    thm: 'Theorem '
+    lem: 'Lemma '
+    def: 'Definition '
+    cor: 'Corrolary '
+    prp: 'Proposition '
+    ex: 'Example '
+    proof: 'Proof. '
+    remark: 'Remark. '
+
