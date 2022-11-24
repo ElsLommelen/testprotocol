@@ -13,7 +13,10 @@ Gesorteerd van recent naar oud. E.g.
   - Eerste versie van het protocol
 -->
 ```
--   [2022.03](https://protocols.inbo.io/2022.03/nl/index.html)
-    -   Tweede versie van het protocol
--   [2020.01](https://protocols.inbo.io/2020.01/nl/index.html)
-    -   Eerste versie van het protocol
+## [2022.03](https://protocols.inbo.io/2022.03/nl/index.html)
+
+-   Tweede versie van het protocol
+
+## [2020.01](https://protocols.inbo.io/2020.01/nl/index.html)
+
+-   Eerste versie van het protocol
