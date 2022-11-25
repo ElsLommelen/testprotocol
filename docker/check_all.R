@@ -1,28 +1,24 @@
 # bundled checks for protocols
 library(protocolhelper)
 check_all <- function(protocol_code) {
-  test1 <-
+  check_fm <-
     tryCatch(
       protocolhelper::check_frontmatter(protocol_code),
       error = function(e) e
     )
-  test2 <-
+  check_str <-
     tryCatch(
       protocolhelper::check_structure(protocol_code),
       error = function(e) e
     )
-  fail <-
-    inherits(test1, "error") | inherits(test2, "error")
-  if (fail) {
+  if (inherits(check_fm, "error") | inherits(check_str, "error")) {
     stop(
-      sprintf("\nThe source code failed some checks.
-              Please check the error messages:
-              error in check_frontmatter: %1$s
-              error in check_structure: %2$s",
-              test1$message,
-              test2$message
-              )
+      sprintf(
+        "One or more errors occurred in either check_frontmatter or
+        check_structure: %s \n",
+        c(check_fm$message, check_str$message)
       )
+    )
   }
 }
 check_all(Sys.getenv("GITHUB_HEAD_REF"))  
