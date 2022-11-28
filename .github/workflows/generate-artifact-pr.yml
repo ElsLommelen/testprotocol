@@ -14,11 +14,15 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }} # checkout PR head commit
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
+      - name: Set RENV_PATHS_ROOT
+        shell: bash
+        run: |
+          echo "RENV_PATHS_ROOT=${{ runner.temp }}/renv" >> $GITHUB_ENV
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
@@ -26,30 +30,35 @@ jobs:
       - name: Setup pandoc and pandoc-citeproc
         uses: r-lib/actions/setup-pandoc@v2
 
-      - name: Query dependencies
+      - name: Install and activate renv
         run: |
-          install.packages('remotes')
-          saveRDS(remotes::dev_package_deps(dependencies = NA), ".github/depends.Rds", version = 2)
-          writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/R-version")
+          install.packages("renv")
+          renv::activate()
         shell: Rscript {0}
-
-      - name: Restore R package cache
-        uses: actions/cache@v2
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
           sudo apt-get install libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev
 
-      - name: Install dependencies
+      - name: Get R and OS version
+        id: get-version
         run: |
-          remotes::install_deps(dependencies = NA) #fails to install protocolhelper
-          remotes::install_github("inbo/protocolhelper")
+          cat("##[set-output name=os-version;]", sessionInfo()$running, "\n", sep = "")
+          cat("##[set-output name=r-version;]", R.Version()$version.string, sep = "")
         shell: Rscript {0}
+
+      - name: Restore Renv package cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{ inputs.cache-version }}-${{ hashFiles('renv.lock') }}
+          restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
+
+      - name: Restore R packages
+        shell: Rscript {0}
+        run: |
+          renv::restore()
 
       - name: Session info
         run: |
