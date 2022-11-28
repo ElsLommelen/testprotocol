@@ -50,7 +50,12 @@ jobs:
           key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{ inputs.cache-version }}-${{ hashFiles('renv.lock') }}
           restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
 
-      - name: Install system dependencies
+    - name: Restore R packages
+      shell: Rscript {0}
+      run: |
+        renv::restore()
+    
+    - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
           sudo apt-get install libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev
