@@ -31,6 +31,13 @@ output:
           <li class="toc-logo"><a href="https://www.vlaanderen.be/inbo/home/"><img src="css/img/inbo-nl.jpg"></a></li>
         after: <li class="cc"><a href="http://creativecommons.org/licenses/by/4.0/"><img
           src="css/img/cc-by.png"></a></li>
+params:
+  dependencies:
+    value:
+    - protocol_code: sfp-001-nl
+      version_number: '2022.01'
+      params: .na
+      appendix: true
 ---
 
 ```{=html}
