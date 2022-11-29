@@ -5,7 +5,6 @@ author:
 - name: lastname, firstname
   orcid: 0000-0001-2345-6789
 date: '2022-11-16'
-reviewers: someone else
 file_manager: who?
 protocol_code: sfp-101-en
 version_number: '2022.02'
@@ -29,7 +28,7 @@ output:
           src="css/img/cc-by.png"></a></li>
 ---
 
-
+```{=html}
 <!--
 Instructions for drawing up the protocol:
 
@@ -39,8 +38,7 @@ It is in those files that you need to edit.
 Not all parts always apply.
 In those cases, leave the title headings and explicitly state "not applicable".
 -->
-
-
+```
 ```{r setup, include=FALSE}
 library(knitr)
 opts_chunk$set(
@@ -60,8 +58,8 @@ library(protocolhelper)
 path_to_protocol <- get_path_to_protocol(rmarkdown::metadata$protocol_code)
 ```
 
-# Metadata {-}
+# Metadata {.unnumbered}
 
-| Reviewers | File manager | Protocol code | Version number | Language | Theme |
-| --------- | ----------------- | ------------- | ------------ | ---- | ----- |
+| Reviewers                                                 | File manager                         | Protocol code                         | Version number                         | Language                         | Theme                         |
+|-----------------------------------------------------------|--------------------------------------|---------------------------------------|----------------------------------------|----------------------------------|-------------------------------|
 | `r paste(rmarkdown::metadata$reviewers, collapse = ", ")` | `r rmarkdown::metadata$file_manager` | `r rmarkdown::metadata$protocol_code` | `r rmarkdown::metadata$version_number` | `r rmarkdown::metadata$language` | `r rmarkdown::metadata$theme` |
