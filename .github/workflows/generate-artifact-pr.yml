@@ -83,7 +83,5 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v3
         with:
-          name: pr-${{ env.PR_NUMBER }}-inbo-protocol
+          name: rendered-protocol
           path: ./**/artifact/
-        env:
-          PR_NUMBER: ${{ github.event.number }}
