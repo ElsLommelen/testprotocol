@@ -81,7 +81,7 @@ jobs:
         
       - name: Archive protocol to an artifact
         if: ${{ success() }}
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: pr-${{ env.PR_NUMBER }}-inbo-protocol
           path: ./**/artifact/
