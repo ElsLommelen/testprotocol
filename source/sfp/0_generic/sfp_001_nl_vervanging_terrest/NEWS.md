@@ -13,7 +13,7 @@ Gesorteerd van recent naar oud. E.g.
   - Eerste versie van het protocol
 -->
 ```
-## [2022.03](../2022.03/index.html)
+## [2022.04](../2022.04/index.html)
 
 -   Tweede versie van het protocol
 
