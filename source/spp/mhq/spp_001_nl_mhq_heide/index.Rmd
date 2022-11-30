@@ -17,7 +17,9 @@ language: nl
 template_name: spp
 project_name: mhq
 site: bookdown::bookdown_site
-bibliography: referenties.yaml
+bibliography:
+- referenties.yaml
+- 2022.01/references_habitats.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/research-institute-for-nature-and-forest.csl
 output:
   bookdown::gitbook:
