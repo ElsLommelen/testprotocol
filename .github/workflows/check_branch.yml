@@ -20,3 +20,7 @@ jobs:
         uses: ElsLommelen/actions/protocol_check@protocols
         with:
           PAT: ${{ secrets.PAT }}
+      - name: Update protocol
+        uses: ElsLommelen/actions/protocol_update@protocols
+        with:
+          PAT: ${{ secrets.PAT }}
