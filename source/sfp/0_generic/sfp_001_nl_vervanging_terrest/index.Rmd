@@ -14,6 +14,7 @@ language: nl
 template_name: sfp
 theme: generic
 site: bookdown::bookdown_site
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/research-institute-for-nature-and-forest.csl
 output:
   bookdown::gitbook:
     split_by: none
