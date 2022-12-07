@@ -1,6 +1,5 @@
 ---
 title: Vervangprocedure voor geselecteerde steekproefeenheden van terrestrische types
-subtitle: null
 author:
 - name: Toon Westra
   orcid: 0000-0003-2478-9459
@@ -10,10 +9,12 @@ reviewers:
 - Floris Vanderhaeghe
 file_manager: Toon Westra
 protocol_code: sfp-001-nl
-version_number: '2022.01'
+version_number: '2022.04'
 language: nl
+template_name: sfp
 theme: generic
 site: bookdown::bookdown_site
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/research-institute-for-nature-and-forest.csl
 output:
   bookdown::gitbook:
     split_by: none
@@ -23,9 +24,12 @@ output:
     config:
       toc:
         before: |
-          <li class="toc-logo"><a href="./"><img src="css/img/inbo-nl.jpg"></a></li>
+          <li class="toc-logo"><a href="https://www.vlaanderen.be/inbo/home/"><img src="css/img/inbo-nl.jpg"></a></li>
+          <li class="toc-logo"><a href="https://inbo.github.io/protocols/"><button class="btn"><i class="fa fa-home"></i> Protocols homepage</button></li>
 bibliography: references_habitats.bib
 link-citations: true
+url: "https://inbo.github.io/protocols/"
+github_repo: "inbo/protocolsource"
 ---
 
 ```{=html}
