@@ -12,7 +12,7 @@ reviewers:
 - Leen Govaere
 file_manager: Patrik Oosterlynck
 protocol_code: spp-001-nl
-version_number: '2022.05'
+version_number: '2022.06'
 language: nl
 template_name: spp
 project_name: mhq
