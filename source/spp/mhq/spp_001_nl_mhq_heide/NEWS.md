@@ -16,6 +16,10 @@ Gesorteerd van recent naar oud.
 - Eerste versie van het protocol
 -->
 ```
+## [2022.05](../2022.05/index.html)
+
+-   tweede versie van het protocol om website verbeteringen te testen
+
 ## [2022.03](../2022.03/index.html)
 
 -   eerste versie van het protocol
