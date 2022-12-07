@@ -1,3 +1,8 @@
+### Version [2022.05](2022.05/index.html) (added: 2022-12-07)
+
+- Protocol code: spp-002-nl
+- Title: Een project-specifiek protocol
+
 ## Version 2022.04
 
 - Protocol code: sfp-001-nl
