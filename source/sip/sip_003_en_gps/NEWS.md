@@ -17,3 +17,6 @@ Sort the changes by version number, most recent comes first.
 - First version of the protocol
 -->
 ```
+## [2023.01](../2023.01/index.html)
+
+-   First version of the protocol
