@@ -1,3 +1,10 @@
+### First version of protocol: sip-003-en
+
+- Title: How to work with GPS
+- Published on: 2023-01-10
+- Version number: 2023.01
+- Link to this version: [sip-003-en version 2023.01](2023.01/index.html)
+
 ### Version [2022.06](2022.06/index.html) (added: 2022-12-07)
 
 - Protocol code: spp-001-nl
