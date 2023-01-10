@@ -1205,9 +1205,9 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "inbo",
       "RemoteRepo": "protocolhelper",
-      "RemoteRef": "v0.4.8",
-      "RemoteSha": "ce35b93d483ec6cc02f7750e95e1eea5882e4ab4",
-      "Hash": "96124a5dada9eef61ba9b184b668cf61",
+      "RemoteRef": "main",
+      "RemoteSha": "04337a06015094d3e066457e8fca889600881274",
+      "Hash": "92bc8af179c8aad9134d9b21629e043e",
       "Requirements": [
         "R6",
         "assertthat",
