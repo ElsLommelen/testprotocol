@@ -3,7 +3,7 @@
 echo '\nGetting the code...\n'
 git clone --quiet https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY /render
 cd /render
-git checkout $GITHUB_REF_NAME
+git checkout main
 git config --global user.email "info@inbo.be"
 git config --global user.name "INBO"
 
