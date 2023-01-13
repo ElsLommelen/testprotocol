@@ -8,43 +8,48 @@
 ### First version of protocol: sip-003-en
 
 - Title: How to work with GPS
-- Published on: 2023-01-10
+- Published on: 2023-01-13
 - Version number: 2023.01
 - Link to this version: [sip-003-en version 2023.01](2023.01/index.html)
 
-### Version [2022.06](2022.06/index.html) (added: 2022-12-07)
+### Update of protocol: spp-001-nl
 
-- Protocol code: spp-001-nl
 - Title: Veldprotocol Kwaliteitsmeetnet Natura 2000 habitats partim heidehabitats
+- Published on: 2023-01-13
+- Version number: 2022.06
+- Link to this version: [spp-001-nl version 2022.06](2022.06/index.html)
 
-### Version [2022.05](2022.05/index.html) (added: 2022-12-07)
+### First version of protocol: spp-002-nl
 
-- Protocol code: spp-002-nl
 - Title: Een project-specifiek protocol
+- Published on: 2023-01-13
+- Version number: 2022.05
+- Link to this version: [spp-002-nl version 2022.05](2022.05/index.html)
 
-## Version 2022.04
+### Update of protocol: sfp-001-nl
 
-- Protocol code: sfp-001-nl
-- Title: Vervangprocedure voor geselecteerde steekproefeenheden van terrestrische types
+-   Title: Vervangprocedure voor geselecteerde steekproefeenheden van terrestrische types
+-   Published on: 2023-01-13
+-   Version number: 2022.04
+-   Link to this version: [sfp-001-nl version 2022.04](2022.04/index.html)
 
-## Version 2022.03
+### First version of protocol: spp-001-nl
 
-- Protocol code: spp-001-nl
-- Title: Veldprotocol Kwaliteitsmeetnet Natura 2000 habitats partim heidehabitats
+-   Title: Veldprotocol Kwaliteitsmeetnet Natura 2000 habitats partim heidehabitats
+-   Published on: 2023-01-13
+-   Version number: 2022.03
+-   Link to this version: [spp-001-nl version 2022.03](2022.03/index.html)
 
-## Version 2022.01
+### First version of protocol: sfp-101-en
 
-- Protocol code: sfp-001-nl
-- Title: Vervangprocedure voor geselecteerde steekproefeenheden van terrestrische types
+-   Title: Test 1
+-   Published on: 2023-01-13
+-   Version number: 2022.02
+-   Link to this version: [sfp-101-en version 2022.02](2022.02/index.html)
 
-<!--One entry for each release describing the generic changes since the previous release.
-e.g. (sort most recent first)
+### First version of protocol: sfp-001-nl
 
-- 2020.03
-    - sfp-403_shorttitle_nl (first version)
-    - sfp-403_shorttitle_en (first version)
-- 2020.02
-    - sfp-402_shorttitle_nl (update)
-- 2020.01
-    - sfp-402_shorttitle_nl (first version)
--->
+-   Title: Vervangprocedure voor geselecteerde steekproefeenheden van terrestrische types
+-   Published on: 2023-01-13
+-   Version number: 2022.01
+-   Link to this version: [sfp-001-nl version 2022.01](2022.01/index.html)
