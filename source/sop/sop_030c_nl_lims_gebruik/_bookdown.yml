@@ -1,0 +1,29 @@
+book_filename: sop_030c_nl_lims_gebruik.Rmd
+delete_merged_file: true
+edit: https://github.com/inbo/protocolsource/edit/main/source/sop/sop_030c_nl_lims_gebruik/%s
+rmd_files:
+- index.Rmd
+- NEWS.md
+- 01_samenvatting.Rmd
+- 02_voorbereidingen.Rmd
+- 03_procedure_visueel.Rmd
+- 04_stappenplan.Rmd
+- 05_definities.Rmd
+- 06_referenties.Rmd
+- 07_appendices.Rmd
+- 08_subprotocols.Rmd
+output_dir: ../../../docs/sop/sop_030c_nl_lims_gebruik
+language:
+  label:
+    fig: 'Figuur '
+    tab: 'Tabel '
+    eq: 'Vergelijking '
+    thm: 'Theorema '
+    lem: 'Lemma '
+    def: 'Definitie '
+    cor: 'Bijgevolg '
+    prp: 'Propositie '
+    ex: 'Voorbeeld '
+    proof: 'Bewijs. '
+    remark: 'Opmerking. '
+

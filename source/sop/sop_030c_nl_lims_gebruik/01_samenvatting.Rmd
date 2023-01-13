@@ -1,0 +1,15 @@
+# Samenvatting
+
+## Doelstelling
+
+De doelstelling is ...
+
+## Toepassingsgebied
+
+## Niet binnen het toepassingsgebied
+
+```{=html}
+<!--
+En waar vinden we deze informatie dan, indien ze beschikbaar is?
+-->
+```
