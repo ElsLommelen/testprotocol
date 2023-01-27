@@ -25,5 +25,7 @@ jobs:
       - name: Create docker git tag if any of the files changed
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: |
+          git config --global user.email "info@inbo.be"
+          git config --global user.name "inbo"
           git tag -a docker-${{ github.sha }} -m "new docker image"
           git push --follow-tags
