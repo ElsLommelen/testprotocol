@@ -19,11 +19,8 @@ jobs:
         with:
           files: |
             dockerfile
-            docker-compose.test.yml
-            test_docker.sh
             docker
             renv.lock
-            .github/workflows/docker.yml
 
       - name: Create docker git tag if any of the files changed
         if: steps.changed-files-specific.outputs.any_changed == 'true'
