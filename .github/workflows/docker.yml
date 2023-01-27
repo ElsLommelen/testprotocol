@@ -18,7 +18,7 @@ jobs:
         uses: tj-actions/changed-files@v35
         with:
           files: |
-            dockerfile
+            Dockerfile
             docker
             renv.lock
 
