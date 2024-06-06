@@ -1,0 +1,33 @@
+name: Get latest merged PR branch
+
+on:
+  push:
+    branches:
+     - main
+
+jobs:
+  get-merged-branch:
+    runs-on: ubuntu-latest
+    name: "add protocol to website"
+    steps:
+      - name: checkout the repository
+        uses: actions/checkout@v4
+      - name: Get latest merged PR targeting main
+        id: get-pr
+        run: |
+          gh pr list --state closed --json number,baseRefName,headRefName,mergedAt --jq '.[] | select(.baseRefName == "main" and .mergedAt != null) | {number,headRefName} | sort_by(.mergedAt) | last'
+        env:
+          PAT: ${{ secrets.PAT }}
+      - name: Set output
+        run: echo "latest_merged_branch=${{ steps.get-pr.outputs.headRefName }}" >> $RECENT_MERGED_BRANCH_NAME
+      - name: Checkout repo and build website
+        if: (startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sfp-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sip-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sop-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sap-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'spp-'))
+        uses: inbo/actions/protocol_website@main
+        with:
+          PAT: ${{ secrets.PAT }}
+          GITHUB_REPOSITORY_DEST: "inbo/protocols"
+          RECENT_MERGED_BRANCH_NAME: $RECENT_MERGED_BRANCH_NAME
