@@ -17,6 +17,8 @@ jobs:
         run: |
           branch_name=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe "ElsLommelen/.*$" | awk -F '/' '{print $2}')
           echo "RECENT_MERGED_BRANCH_NAME=branch_name" >> "$GITHUB_ENV"
+      - name: Use the value
+        run: printf '%s\n' "$RECENT_MERGED_BRANCH_NAME"
       - name: Checkout repo and build website
         if: (startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sfp-')
           || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sip-')
