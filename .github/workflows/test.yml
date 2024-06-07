@@ -15,6 +15,11 @@ jobs:
       - name: Get latest merged PR targeting main
         id: get-pr
         run: |
+          printf '%s\nstap1:' $(git log --merges origin/main --oneline --grep='^Merge' -1)
+          printf '%s\nstap2 oe:' $(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe "ElsLommelen/.*$")
+          printf '%s\nstap3 oe:' $(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe "ElsLommelen/.*$" | awk -F '/' '{print $2}')
+          printf '%s\nstap2 o:' $(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o "ElsLommelen/.*$")
+          printf '%s\nstap3 o:' $(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o "ElsLommelen/.*$" | awk -F '/' '{print $2}')
           branch_name=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe "ElsLommelen/.*$" | awk -F '/' '{print $2}')
           echo "RECENT_MERGED_BRANCH_NAME=$branch_name" >> "$GITHUB_ENV"
       - name: Use the value
