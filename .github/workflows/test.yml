@@ -15,16 +15,16 @@ jobs:
       - name: Get latest merged PR targeting main
         id: get-pr
         run: |
-          RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe "ElsLommelen/.*$" | awk -F '/' '{print $2}')
-          echo "::set-output name=RECENT_MERGED_BRANCH_NAME::RECENT_MERGED_BRANCH_NAME"
+          branch_name=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe "ElsLommelen/.*$" | awk -F '/' '{print $2}')
+          echo "branch_name=branch_name" >> $RECENT_MERGED_BRANCH_NAME"
       - name: Checkout repo and build website
-        if: (startsWith(steps.get-pr.outputs.RECENT_MERGED_BRANCH_NAME, 'sfp-')
-          || startsWith(steps.get-pr.outputs.RECENT_MERGED_BRANCH_NAME, 'sip-')
-          || startsWith(steps.get-pr.outputs.RECENT_MERGED_BRANCH_NAME, 'sop-')
-          || startsWith(steps.get-pr.outputs.RECENT_MERGED_BRANCH_NAME, 'sap-')
-          || startsWith(steps.get-pr.outputs.RECENT_MERGED_BRANCH_NAME, 'spp-'))
+        if: (startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sfp-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sip-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sop-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sap-')
+          || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'spp-'))
         uses: inbo/actions/protocol_website@main
         with:
           PAT: ${{ secrets.PAT }}
           GITHUB_REPOSITORY_DEST: "inbo/protocols"
-          RECENT_MERGED_BRANCH_NAME: $steps.get-pr.outputs.RECENT_MERGED_BRANCH_NAME
+          RECENT_MERGED_BRANCH_NAME: $RECENT_MERGED_BRANCH_NAME
