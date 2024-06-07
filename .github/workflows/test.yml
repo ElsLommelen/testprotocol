@@ -15,11 +15,8 @@ jobs:
       - name: Get latest merged PR targeting main
         id: get-pr
         run: |
-          gh pr list --state closed --json number,baseRefName,headRefName,mergedAt --jq '.[] | select(.baseRefName == "main" and .mergedAt != null) | {number,headRefName} | sort_by(.mergedAt) | last'
-        env:
-          GH_TOKEN: ${{ secrets.PAT }}
-      - name: Set output
-        run: echo "latest_merged_branch=${{ steps.get-pr.outputs.headRefName }}" >> $RECENT_MERGED_BRANCH_NAME
+          merged_branch=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe "ElsLommelen/.*$" | awk -F '/' '{print $2}')
+          echo "merged_branch:$merged_branch" >> $RECENT_MERGED_BRANCH_NAME
       - name: Checkout repo and build website
         if: (startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sfp-')
           || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sip-')
