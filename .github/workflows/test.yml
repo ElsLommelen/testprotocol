@@ -15,11 +15,11 @@ jobs:
       - name: Get latest merged PR targeting main
         id: get-pr
         run: |
-          git log --merges origin/main --oneline --grep='^Merge' -1
-          git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$'
-          git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}'
-          git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o 'ElsLommelen/.*$' | awk -F '/' '{print $2}'
-          git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o 'ElsLommelen/.*$' | awk -F '/' '{print $2}'
+          $(git log --merges origin/main --oneline --grep='^Merge' -1)
+          "$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$')"
+          echo "$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')"
+          $(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o 'ElsLommelen/.*$' | awk -F '/' '{print $2}')
+          $(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o 'ElsLommelen/.*$' | awk -F '/' '{print $2}')
           echo "RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
       - name: Use the value
         run: echo $RECENT_MERGED_BRANCH_NAME
