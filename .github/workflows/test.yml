@@ -12,19 +12,18 @@ jobs:
     steps:
       - name: checkout the repository
         uses: actions/checkout@v4
-      - name: Get latest merged PR targeting main
-        id: get-pr
+      - name: Get branch names
+        id: branch-names
+        uses: tj-actions/branch-names@v8
+      - name: current branch names
         run: |
-          echo "$(git log --merges origin/main --oneline --grep='^Merge' -1)"
-          echo "$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$')"
-          echo "$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')"
-          echo "$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o 'ElsLommelen/.*$' | awk -F '/' '{print $2}')"
-          echo "$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -o 'ElsLommelen/.*$' | awk -F '/' '{print $2}')"
-          echo "RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
-      - name: Use the value
-        run: echo $RECENT_MERGED_BRANCH_NAME
-      - name: old method
-        run: echo ${{ env.RECENT_MERGED_BRANCH_NAME }}
+          echo "${{ steps.branch-names.outputs.current_branch }}"
+      - name: ref branch names
+        run: |
+          echo "${{ steps.branch-names.outputs.ref_branch }}"
+      - name: head ref branch names
+        run: |
+          echo "${{ steps.branch-names.outputs.head_ref_branch }}"
       - name: Checkout repo and build website
         if: (startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sfp-')
           || startsWith(env.RECENT_MERGED_BRANCH_NAME, 'sip-')
