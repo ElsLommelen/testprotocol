@@ -22,6 +22,7 @@ jobs:
       - name: Print name of recent merged branch (test)
         run: |
           echo "${{ env.RECENT_MERGED_BRANCH_NAME }}"
+          echo '\nbranch name =' $RECENT_MERGED_BRANCH_NAME
 
       - name: Checkout repo and build website
         if: (startsWith(${{ env.RECENT_MERGED_BRANCH_NAME }}, 'sfp-')
