@@ -15,7 +15,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Get latest merged PR targeting main
-        id: get_pr
         run: |
           RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')
           echo "RECENT_MERGED_BRANCH_NAME=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_ENV
