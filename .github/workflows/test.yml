@@ -13,7 +13,7 @@ jobs:
       - name: checkout the repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 2
       - name: Get latest merged PR targeting main
         run: |
           RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')
