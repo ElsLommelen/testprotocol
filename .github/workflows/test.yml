@@ -1,0 +1,38 @@
+name: Get latest merged PR branch
+
+on:
+  push:
+    branches:
+     - main
+
+jobs:
+  get-merged-branch:
+    runs-on: ubuntu-latest
+    name: "add protocol to website"
+    steps:
+      - name: checkout the repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Get latest merged PR targeting main
+        run: |
+          RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')
+          echo "RECENT_MERGED_BRANCH_NAME=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Print name of recent merged branch (test)
+        run: |
+          echo "${{ env.RECENT_MERGED_BRANCH_NAME }}"
+          echo '\nbranch name =' $RECENT_MERGED_BRANCH_NAME
+
+      - name: Checkout repo and build website
+        if: (startsWith(${{ env.RECENT_MERGED_BRANCH_NAME }}, 'sfp-')
+          || startsWith(${{ env.RECENT_MERGED_BRANCH_NAME }}, 'sip-')
+          || startsWith(${{ env.RECENT_MERGED_BRANCH_NAME }}, 'sop-')
+          || startsWith(${{ env.RECENT_MERGED_BRANCH_NAME }}, 'sap-')
+          || startsWith(${{ env.RECENT_MERGED_BRANCH_NAME }}, 'spp-'))
+        uses: inbo/actions/protocol_website@main
+        with:
+          PAT: ${{ secrets.PAT }}
+          GITHUB_REPOSITORY_DEST: "inbo/protocols"
+          RECENT_MERGED_BRANCH_NAME: ${{ env.RECENT_MERGED_BRANCH_NAME}}
+
