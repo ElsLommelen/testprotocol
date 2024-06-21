@@ -21,7 +21,8 @@ jobs:
           echo "RECENT_MERGED_BRANCH_NAME=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_ENV
 
       - name: Use the value
-        run: echo "Recent merged branch name is: ${{ env.RECENT_MERGED_BRANCH_NAME }}"
+        run: |
+          echo "${{ env.RECENT_MERGED_BRANCH_NAME }}"
 
       - name: Checkout repo and build website
         if: (startsWith(${{ env.RECENT_MERGED_BRANCH_NAME }}, 'sfp-')
