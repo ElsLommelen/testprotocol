@@ -12,7 +12,7 @@ org.label-schema.vcs-url="https://github.com/inbo/protocolsource" \
 org.label-schema.vendor="Research Institute for Nature and Forest" \
 maintainer="Hans Van Calster <hans.vancalster@inbo.be>"
 
-## for apt to be noninteractive
+## for apt to be noninteractive 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
