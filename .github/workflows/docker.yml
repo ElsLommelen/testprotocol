@@ -13,14 +13,24 @@ jobs:
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
 
-      - name: Get changed files
+      - name: Check for file changes
         id: changed-files-specific
-        uses: tj-actions/changed-files@v35
-        with:
-          files: |
-            Dockerfile
-            docker
-            renv.lock
+        run: |
+          # Get the base commit to compare against
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_COMMIT=${{ github.event.pull_request.base.sha }}
+          else
+            BASE_COMMIT=$(git rev-parse HEAD^)
+          fi
+          
+          # Check if specific files have changed
+          git diff --name-only $BASE_COMMIT HEAD | grep -q -E '(^Dockerfile$|^docker/|^renv\.lock$)'
+          
+          if [ $? -eq 0 ]; then
+            echo "any_changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "any_changed=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Create docker git tag if any of the files changed
         if: steps.changed-files-specific.outputs.any_changed == 'true'
