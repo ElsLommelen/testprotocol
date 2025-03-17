@@ -20,7 +20,7 @@ jobs:
           PREVIOUS_COMMIT=$(git rev-parse HEAD^)
           
           # Check if specific files have changed
-          git diff --name-only $PREVIOUS HEAD | grep -q -E '(^Dockerfile$|^docker/|^renv\.lock$)'
+          git diff --name-only $PREVIOUS_commit HEAD | grep -q -E '(^Dockerfile$|^docker/|^renv\.lock$)'
           
           if [ $? -eq 0 ]; then
             echo "any_changed=true" >> $GITHUB_OUTPUT
