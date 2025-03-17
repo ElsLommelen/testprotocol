@@ -16,15 +16,11 @@ jobs:
       - name: Check for file changes
         id: changed-files-specific
         run: |
-          # Get the base commit to compare against
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            BASE_COMMIT=${{ github.event.pull_request.base.sha }}
-          else
-            BASE_COMMIT=$(git rev-parse HEAD^)
-          fi
+          # Get the previous commit SHA
+          PREVIOUS_COMMIT=$(git rev-parse HEAD^)
           
           # Check if specific files have changed
-          git diff --name-only $BASE_COMMIT HEAD | grep -q -E '(^Dockerfile$|^docker/|^renv\.lock$)'
+          git diff --name-only $PREVIOUS HEAD | grep -q -E '(^Dockerfile$|^docker/|^renv\.lock$)'
           
           if [ $? -eq 0 ]; then
             echo "any_changed=true" >> $GITHUB_OUTPUT
