@@ -21,5 +21,10 @@ Rscript --no-save --no-restore -e 'protocolhelper:::update_news_release("'$GITHU
 git add NEWS.md
 git commit --message="update general NEWS.md"
 
+echo '\nUpdating doi in index.Rmd...\n'
+Rscript --no-save --no-restore -e 'protocolhelper:::update_doi(protocol_code = "'$GITHUB_HEAD_REF'", sandbox = TRUE)'
+git add index.Rmd
+git commit --message="update doi in index.Rmd"
+
 echo 'git push'
 git push -f

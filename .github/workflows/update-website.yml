@@ -24,5 +24,6 @@ jobs:
         uses: ElsLommelen/actions/protocol_website@protocols
         with:
           PAT: ${{ secrets.PAT }}
+          ZENODO_SANDBOX: ${{ secrets.ZENODO_SANDBOX }}
           GITHUB_REPOSITORY_DEST: "ElsLommelen/protocols"
           RECENT_MERGED_BRANCH_NAME: $RECENT_MERGED_BRANCH_NAME
