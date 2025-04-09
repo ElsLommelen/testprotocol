@@ -2441,12 +2441,19 @@
       "Config/checklist/keywords": "sql; databases; queries",
       "Encoding": "UTF-8",
       "Language": "en-GB",
-      "LazyData": "true",
       "Roxygen": "list(markdown = TRUE)",
       "RoxygenNote": "7.3.2",
+      "Config/pak/sysreqs": "make unixodbc-dev",
+      "Repository": "https://inbo.r-universe.dev",
+      "RemoteUrl": "https://github.com/inbo/inbodb",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "64b5f20c01c53df1c5911d977650a2cfae645acd",
+      "NeedsCompilation": "no",
       "Author": "Els Lommelen [aut, cre] (<https://orcid.org/0000-0002-3481-5684>, Research Institute for Nature and Forest (INBO)), Hans Van Calster [aut] (<https://orcid.org/0000-0001-8595-8426>, Research Institute for Nature and Forest (INBO)), Els De Bie [aut] (<https://orcid.org/0000-0001-7679-743X>, Research Institute for Nature and Forest (INBO)), Floris Vanderhaeghe [aut] (<https://orcid.org/0000-0002-6378-6229>, Research Institute for Nature and Forest (INBO)), Frederic Piesschaert [aut] (<https://orcid.org/0000-0002-5843-646X>, Research Institute for Nature and Forest (INBO)), Toon Westra [aut] (<https://orcid.org/0000-0003-2478-9459>, Research Institute for Nature and Forest (INBO)), Stijn Van Hoey [ctb] (<https://orcid.org/0000-0001-6413-3185>), Research Institute for Nature and Forest (INBO) [cph, fnd]",
       "Maintainer": "Els Lommelen <els.lommelen@inbo.be>",
-      "Repository": "inbo"
+      "Depends": [
+        "R (>= 3.5.0)"
+      ]
     },
     "ini": {
       "Package": "ini",
@@ -3680,7 +3687,7 @@
     },
     "protocolhelper": {
       "Package": "protocolhelper",
-      "Version": "0.7.0",
+      "Version": "0.8.0",
       "Source": "GitHub",
       "Title": "Helper Functions to Manage Protocols",
       "Authors@R": "c( person(\"Hans\", \"Van Calster\", , \"hans.vancalster@inbo.be\", role = c(\"aut\", \"cre\"), comment = c(ORCID = \"0000-0001-8595-8426\", affiliation = \"Research Institute for Nature and Forest (INBO)\")), person(\"Thierry\", \"Onkelinx\", , \"thierry.onkelinx@inbo.be\", role = \"aut\", comment = c(ORCID = \"0000-0001-8804-4216\", affiliation = \"Research Institute for Nature and Forest (INBO)\")), person(\"Floris\", \"Vanderhaeghe\", , \"floris.vanderhaeghe@inbo.be\", role = \"aut\", comment = c(ORCID = \"0000-0002-6378-6229\", affiliation = \"Research Institute for Nature and Forest (INBO)\")), person(\"Els\", \"Lommelen\", , \"els.lommelen@inbo.be\", role = \"ctb\", comment = c(ORCID = \"0000-0002-3481-5684\", affiliation = \"Research Institute for Nature and Forest (INBO)\")), person(\"Research Institute for Nature and Forest (INBO)\", , , \"info@inbo.be\", role = c(\"cph\", \"fnd\")) )",
@@ -3713,32 +3720,36 @@
       ],
       "Suggests": [
         "dplyr",
+        "keyring",
         "lubridate",
         "magick",
         "pander",
         "png",
         "reactable",
+        "rlang",
         "slickR",
         "testthat (>= 2.1.0)",
-        "tinytex"
+        "tinytex",
+        "zen4R"
       ],
       "Additional_repositories": "https://inbo.r-universe.dev",
       "Config/checklist/communities": "inbo",
       "Config/checklist/keywords": "protocols; R package; Reproducible research; Rmarkdown templates",
       "Encoding": "UTF-8",
       "Language": "en-GB",
-      "LazyData": "true",
       "Roxygen": "list(markdown = TRUE)",
       "RoxygenNote": "7.3.2",
       "SystemRequirements": "Pandoc (>= 2.0.0)",
-      "Author": "Hans Van Calster [aut, cre] (<https://orcid.org/0000-0001-8595-8426>, Research Institute for Nature and Forest (INBO)), Thierry Onkelinx [aut] (<https://orcid.org/0000-0001-8804-4216>, Research Institute for Nature and Forest (INBO)), Floris Vanderhaeghe [aut] (<https://orcid.org/0000-0002-6378-6229>, Research Institute for Nature and Forest (INBO)), Els Lommelen [ctb] (<https://orcid.org/0000-0002-3481-5684>, Research Institute for Nature and Forest (INBO)), Research Institute for Nature and Forest (INBO) [cph, fnd]",
-      "Maintainer": "Hans Van Calster <hans.vancalster@inbo.be>",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "inbo",
       "RemoteRepo": "protocolhelper",
-      "RemoteRef": "main",
-      "RemoteSha": "11ea6843ab1e09dcbf27ae5275fe3d664e63f7b7"
+      "RemoteUsername": "inbo",
+      "RemotePkgRef": "inbo/protocolhelper@next-version",
+      "RemoteRef": "next-version",
+      "RemoteSha": "d26ef289ce574d9601b26111feff097b1e270447",
+      "NeedsCompilation": "no",
+      "Author": "Hans Van Calster [aut, cre] (<https://orcid.org/0000-0001-8595-8426>, Research Institute for Nature and Forest (INBO)), Thierry Onkelinx [aut] (<https://orcid.org/0000-0001-8804-4216>, Research Institute for Nature and Forest (INBO)), Floris Vanderhaeghe [aut] (<https://orcid.org/0000-0002-6378-6229>, Research Institute for Nature and Forest (INBO)), Els Lommelen [ctb] (<https://orcid.org/0000-0002-3481-5684>, Research Institute for Nature and Forest (INBO)), Research Institute for Nature and Forest (INBO) [cph, fnd]",
+      "Maintainer": "Hans Van Calster <hans.vancalster@inbo.be>"
     },
     "ps": {
       "Package": "ps",
