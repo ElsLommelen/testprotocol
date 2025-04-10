@@ -3746,7 +3746,7 @@
       "RemoteUsername": "inbo",
       "RemotePkgRef": "inbo/protocolhelper@next-version",
       "RemoteRef": "next-version",
-      "RemoteSha": "d26ef289ce574d9601b26111feff097b1e270447",
+      "RemoteSha": "83573dfd04b29954990fbf6474f6c4cc47133dac",
       "NeedsCompilation": "no",
       "Author": "Hans Van Calster [aut, cre] (<https://orcid.org/0000-0001-8595-8426>, Research Institute for Nature and Forest (INBO)), Thierry Onkelinx [aut] (<https://orcid.org/0000-0001-8804-4216>, Research Institute for Nature and Forest (INBO)), Floris Vanderhaeghe [aut] (<https://orcid.org/0000-0002-6378-6229>, Research Institute for Nature and Forest (INBO)), Els Lommelen [ctb] (<https://orcid.org/0000-0002-3481-5684>, Research Institute for Nature and Forest (INBO)), Research Institute for Nature and Forest (INBO) [cph, fnd]",
       "Maintainer": "Hans Van Calster <hans.vancalster@inbo.be>"
