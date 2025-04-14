@@ -12,7 +12,7 @@ org.label-schema.vcs-url="https://github.com/inbo/protocolsource" \
 org.label-schema.vendor="Research Institute for Nature and Forest" \
 maintainer="Hans Van Calster <hans.vancalster@inbo.be>"
 
-## for apt to be noninteractive 
+## for apt to be noninteractive
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
@@ -24,9 +24,9 @@ RUN apt-get update \
 COPY docker/Rprofile.site $R_HOME/etc/Rprofile.site
 
 ## Install pandoc
-RUN  wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb \
-  && dpkg -i pandoc-2.7.3-1-amd64.deb \
-  && rm pandoc-2.7.3-1-amd64.deb
+RUN  wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.deb \
+  && dpkg -i pandoc-3.2-1-amd64.deb \
+  && rm pandoc-3.2-1-amd64.deb
 
 ## Install git depencencies
 RUN apt-get update \
@@ -46,6 +46,18 @@ RUN  apt-get update \
   && apt-get install -y --no-install-recommends \
      libv8-dev
 
+## Install tinytex
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+    r-cran-tinytex
+RUN  Rscript -e 'tinytex::install_tinytex(force = TRUE)'
+
+## Install LaTeX packages
+RUN apt-get update \
+  && apt-get install -y  --no-install-recommends \
+    ghostscript \
+  && Rscript -e 'tinytex::tlmgr_install(c("amsmath", "amssymb", "array", "babel-dutch", "babel-english", "babel-french", "beamer", "beamerarticle", "biblatex", "bookmark", "booktabs", "calc", "caption", "csquotes", "dvips", "etoolbox", "fancyvrb", "fontenc", "fontspec", "footnote", "footnotehyper", "geometry", "graphicx", "helvetic", "hyperref", "hyphen-dutch", "hyphen-french", "iftex", "inconsolata", "inputenc", "listings", "lmodern", "longtable", "luatexja-preset", "luatexja-fontspec", "mathspec", "microtype", "multirow", "natbib", "orcidlink", "parskip", "pgfpages", "scrreprt", "selnolig", "setspace", "soul", "svg", "tex", "textcomp", "times", "unicode-math", "upquote", "url", "xcolor", "xeCJK", "xurl"))'
+
 WORKDIR /github/workspace
 
 RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
@@ -58,5 +70,6 @@ RUN R -e "renv::isolate()"
 COPY docker/entrypoint_website.sh /entrypoint_website.sh
 COPY docker/entrypoint_update.sh /entrypoint_update.sh
 COPY docker/entrypoint_check.sh /entrypoint_check.sh
+COPY docker/test_docker.sh /test_docker.sh
 
 ENTRYPOINT ["/entrypoint_check.sh"]
