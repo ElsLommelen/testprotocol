@@ -20,5 +20,4 @@ jobs:
         uses: inbo/actions/protocol_update@main
         with:
           PAT: ${{ secrets.PAT }}
-        env:
           ZENODO_SANDBOX: ${{ secrets.ZENODO_SANDBOX }}
