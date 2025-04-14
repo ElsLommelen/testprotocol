@@ -18,6 +18,6 @@ jobs:
     name: "check protocol"
     steps:
       - name: Check protocol
-        uses: ElsLommelen/actions/protocol_check@main
+        uses: ElsLommelen/actions/protocol_check@protocols
         with:
           PAT: ${{ secrets.PAT }}
