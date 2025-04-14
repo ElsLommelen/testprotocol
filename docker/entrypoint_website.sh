@@ -15,9 +15,9 @@ Rscript -e 'sessioninfo::session_info()'
 echo '\nAdd tag to merge commit protocolsource...\n'
 echo 'GitHub actions:' $GITHUB_ACTIONS
 echo 'Event name:' $GITHUB_EVENT_NAME
-echo 'ref:' $GITHUB_REF
+echo 'RECENT_MERGED_BRANCH_NAME:' $RECENT_MERGED_BRANCH_NAME
 git rev-parse --abbrev-ref origin/HEAD | sed 's/origin\///' | xargs git checkout
-Rscript --no-save --no-restore -e 'protocolhelper:::set_tags("'$GITHUB_REF_NAME'")'
+Rscript --no-save --no-restore -e 'protocolhelper:::set_tags("'$RECENT_MERGED_BRANCH_NAME'")'
 git push --follow-tags
 
 # look up tag names and tag messages to push to repo protocols later
