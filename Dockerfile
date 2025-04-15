@@ -58,8 +58,6 @@ RUN apt-get update \
     ghostscript \
   && Rscript -e 'tinytex::tlmgr_install(c("amsmath", "amssymb", "array", "babel-dutch", "babel-english", "babel-french", "beamer", "beamerarticle", "biblatex", "bookmark", "booktabs", "calc", "caption", "csquotes", "dvips", "etoolbox", "fancyvrb", "fontenc", "fontspec", "footnote", "footnotehyper", "geometry", "graphicx", "helvetic", "hyperref", "hyphen-dutch", "hyphen-french", "iftex", "inconsolata", "inputenc", "listings", "lmodern", "longtable", "luatexja-preset", "luatexja-fontspec", "mathspec", "microtype", "multirow", "natbib", "orcidlink", "parskip", "pgfpages", "scrreprt", "selnolig", "setspace", "soul", "svg", "tex", "textcomp", "times", "unicode-math", "upquote", "url", "xcolor", "xeCJK", "xurl"))'
 
-WORKDIR /github/workspace
-
 RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
 RUN R -e "renv::consent(provided = TRUE)"
 COPY renv.lock renv.lock
