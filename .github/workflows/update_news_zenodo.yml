@@ -17,7 +17,7 @@ jobs:
     name: "update repo news and zenodo"
     steps:
       - name: Update protocol
-        uses: ElsLommelen/actions/protocol_update@main
+        uses: ElsLommelen/actions/protocol_update@protocols
         with:
           PAT: ${{ secrets.PAT }}
           ZENODO_SANDBOX: ${{ secrets.ZENODO_SANDBOX }}
