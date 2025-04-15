@@ -39,7 +39,7 @@ mkdir /render/publish/
 cp -R /destiny/. /render/publish/.
 
 echo 'Rendering the Rmarkdown files...\n'
-Rscript -e "protocolhelper:::render_release()"
+Rscript -e 'protocolhelper:::render_release(zenodo_token = "'$INPUT_ZENODO_SANDBOX'")'
 if [ $? -ne 0 ]; then
   echo '\nRendering failed. Please check the error message above.\n';
   exit 1
