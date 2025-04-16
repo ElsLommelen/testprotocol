@@ -1,10 +1,9 @@
 #!/bin/sh -l
 
-git clone --quiet https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY /update
+git clone --branch=$INPUT_GITHUB_HEAD_REF https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY /update
 cd /update
 git config --global user.email "info@inbo.be"
 git config --global user.name "INBO"
-git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 
 rm .Rprofile
 
@@ -40,4 +39,5 @@ else
 fi
 
 echo 'git push'
+git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 git push -f
