@@ -1,12 +1,10 @@
 #!/bin/sh -l
 
-# use the mounted repository
+git clone --quiet https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY /update
 cd /update
-
-# Configure Git inside the Docker container
-git config --global user.name "github-actions[bot]"
-git config --global user.email "github-actions[bot]@users.noreply.github.com"
-git remote set-url origin https://x-access-token:${INPUT_PAT}@github.com/${GITHUB_REPOSITORY}.git
+git config --global user.email "info@inbo.be"
+git config --global user.name "INBO"
+git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 
 rm .Rprofile
 
