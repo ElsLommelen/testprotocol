@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 echo '\nGetting the code...\n'
-git clone --branch=$INPUT_GITHUB_HEAD_REF https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY /update
+git clone --branch=$INPUT_GITHUB_HEAD_REF https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY /update
 git config --global user.email "info@inbo.be"
 git config --global user.name "INBO"
 cd /update
