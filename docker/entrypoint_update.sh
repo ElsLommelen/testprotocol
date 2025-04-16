@@ -23,8 +23,24 @@ git commit --message="update general NEWS.md"
 
 echo '\nUpdating doi in index.Rmd ...\n'
 Rscript --no-save --no-restore -e 'protocolhelper:::update_doi(protocol_code = "'$INPUT_GITHUB_HEAD_REF'", sandbox = TRUE, token = "'$INPUT_ZENODO_SANDBOX'")'
-git add index.Rmd
-git commit --message="update doi in index.Rmd"
+
+echo '\nUpdating doi in index.Rmd ...\n'
+
+# First, run the update_doi function as before
+Rscript --no-save --no-restore -e 'protocolhelper:::update_doi(protocol_code = "'$INPUT_GITHUB_HEAD_REF'", sandbox = TRUE, token = "'$INPUT_ZENODO_SANDBOX'")'
+
+# Get the path to the index.Rmd file 
+FILE_PATH=$(Rscript --no-save --no-restore -e 'protocolhelper::get_path_to_protocol(protocol_code = "'$INPUT_GITHUB_HEAD_REF'") |> file.path("index.Rmd")')
+
+# Check if the file exists
+if [ -f "$FILE_PATH" ]; then
+  echo "Found index.Rmd at: $FILE_PATH"
+  git add "$FILE_PATH"
+  git commit --message="update doi in index.Rmd"
+else
+  echo "Error: index.Rmd not found at path: $FILE_PATH"
+  exit 1
+fi
 
 echo 'git push'
 git push -f
