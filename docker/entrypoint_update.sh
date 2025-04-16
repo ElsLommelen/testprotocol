@@ -27,7 +27,7 @@ echo '\nUpdating doi in index.Rmd ...\n'
 Rscript --no-save --no-restore -e 'protocolhelper:::update_doi(protocol_code = "'$INPUT_GITHUB_HEAD_REF'", sandbox = TRUE, token = "'$INPUT_ZENODO_SANDBOX'")'
 
 # Get the path to the index.Rmd file 
-FILE_PATH=$(Rscript --no-save --no-restore -e 'protocolhelper::get_path_to_protocol(protocol_code = "'$INPUT_GITHUB_HEAD_REF'") |> file.path("index.Rmd")')
+FILE_PATH=$(Rscript --no-save --no-restore -e 'protocolhelper::get_path_to_protocol(protocol_code = "'$INPUT_GITHUB_HEAD_REF'") |> file.path("index.Rmd") |> cat()')
 
 # Check if the file exists
 if [ -f "$FILE_PATH" ]; then
