@@ -22,11 +22,8 @@ git add NEWS.md
 git commit --message="update general NEWS.md"
 
 echo '\nUpdating doi in index.Rmd ...\n'
-Rscript --no-save --no-restore -e 'protocolhelper:::update_doi(protocol_code = "'$INPUT_GITHUB_HEAD_REF'", sandbox = TRUE, token = "'$INPUT_ZENODO_SANDBOX'")'
 
-echo '\nUpdating doi in index.Rmd ...\n'
-
-# First, run the update_doi function as before
+# First, run the update_doi function
 Rscript --no-save --no-restore -e 'protocolhelper:::update_doi(protocol_code = "'$INPUT_GITHUB_HEAD_REF'", sandbox = TRUE, token = "'$INPUT_ZENODO_SANDBOX'")'
 
 # Get the path to the index.Rmd file 
