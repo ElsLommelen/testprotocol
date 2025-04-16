@@ -1,10 +1,9 @@
 #!/bin/sh -l
 
-git clone --quiet https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY /update
+git clone --branch=$INPUT_GITHUB_HEAD_REF https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY /update
 cd /update
 git config --global user.email "info@inbo.be"
 git config --global user.name "INBO"
-git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 
 rm .Rprofile
 
@@ -39,5 +38,26 @@ else
   exit 1
 fi
 
+# Diagnostic code before git push
+echo "=== DIAGNOSTIC INFORMATION ==="
+echo "Current directory: $(pwd)"
+echo "Repository content:"
+ls -la
+echo "Git status:"
+git status
+echo "Git remote information:"
+git remote -v
+echo "Git branch information:"
+git branch -a
+echo "Git config information:"
+git config --list
+echo "GITHUB_REPOSITORY value: ${GITHUB_REPOSITORY}"
+echo "GITHUB_TOKEN availability: ${GITHUB_TOKEN:+AVAILABLE}"
+echo "Testing git authentication:"
+git ls-remote https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD || echo "Authentication test failed"
+echo "=== END DIAGNOSTIC ==="
+
+# Original git push command
 echo 'git push'
-git push -f
+git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+git push -f || echo "Git push failed with exit code $?"
