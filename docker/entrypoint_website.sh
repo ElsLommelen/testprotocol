@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 echo '\nGetting the code...\n'
-git clone --quiet https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY /render
+git clone --quiet https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY /render
 cd /render
 git checkout main
 git config --global user.email "info@inbo.be"
@@ -34,7 +34,7 @@ echo 'tagname specific:' $TAGNAME_SPECIFIC
 echo 'tag message specific:' $TAGMESSAGE_SPECIFIC
 
 echo 'Getting previously published protocols\n'
-git clone --quiet --depth=1 --single-branch --branch=main https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY_DEST /destiny
+git clone --quiet --depth=1 --single-branch --branch=main https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY_DEST /destiny
 mkdir /render/publish/
 cp -R /destiny/. /render/publish/.
 
@@ -56,7 +56,7 @@ git config user.name
 git config user.email
 git add --all
 git commit --message="Add new protocol"
-git push -f https://$PAT@github.com/$GITHUB_REPOSITORY_DEST
+git push -f https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY_DEST
 
 git rev-parse --abbrev-ref origin/HEAD | sed 's/origin\///' | xargs git checkout
 git tag -a $TAGNAME_GENERAL -m "$TAGMESSAGE_GENERAL"
