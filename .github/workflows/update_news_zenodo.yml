@@ -20,6 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     name: "update repo news, zenodo and protocol-specific doi"
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Git for authentication
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
       - name: Update protocol
         uses: ElsLommelen/actions/protocol_update@protocols
         with:
