@@ -1,11 +1,11 @@
 #!/bin/sh -l
 
 echo '\nGetting the code...\n'
-git clone --branch=$INPUT_GITHUB_HEAD_REF https://$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY /update
+git clone --branch=$INPUT_GITHUB_HEAD_REF https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY /update
 # Configure Git inside the Docker container
 git config --global user.name "github-actions[bot]"
 git config --global user.email "github-actions[bot]@users.noreply.github.com"
-git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+git remote set-url origin https://x-access-token:${INPUT_PAT}@github.com/${GITHUB_REPOSITORY}.git
 cd /update
 
 rm .Rprofile
