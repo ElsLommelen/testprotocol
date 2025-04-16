@@ -24,5 +24,3 @@ jobs:
         with:
           PAT: ${{ secrets.GITHUB_TOKEN }}
           ZENODO_SANDBOX: ${{ secrets.ZENODO_SANDBOX }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
