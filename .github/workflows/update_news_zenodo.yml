@@ -17,10 +17,10 @@ jobs:
       || startsWith(github.event.pull_request.head.ref, 'sap-')
       || startsWith(github.event.pull_request.head.ref, 'spp-'))
     runs-on: ubuntu-latest
-    name: "update repo news and zenodo"
+    name: "update repo news, zenodo and protocol-specific doi"
     steps:
       - name: Update protocol
         uses: ElsLommelen/actions/protocol_update@protocols
         with:
-          PAT: ${{ secrets.PAT }}
+          PAT: ${{ secrets.GITHUB_TOKEN }}
           ZENODO_SANDBOX: ${{ secrets.ZENODO_SANDBOX }}
