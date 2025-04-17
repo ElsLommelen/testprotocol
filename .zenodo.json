@@ -51,5 +51,48 @@
     "markdown",
     "Flanders",
     "Belgium"
+  ],
+  "contributors": [
+    {
+      "name": "Toon Westra",
+      "type": "Researcher",
+      "orcid": "0000-0003-2478-9459"
+    },
+    {
+      "name": "lastname, firstname",
+      "type": "Researcher",
+      "orcid": "0000-0001-2345-6789"
+    },
+    {
+      "name": {
+        "given": "Hans",
+        "family": "Van Calster"
+      },
+      "type": "Researcher",
+      "email": "hans.vancalster@inbo.be",
+      "orcid": "0000-0001-8595-8426",
+      "affiliation": "Research Institute for Nature and Forest (INBO)",
+      "corresponding": true
+    },
+    {
+      "name": "Van Calster, Hans",
+      "type": "Researcher",
+      "orcid": "0000-0001-8595-8426"
+    },
+    {
+      "name": "Van Calster, Hans",
+      "type": "Researcher",
+      "orcid": "0000-0001-8595-8426"
+    },
+    {
+      "name": "Oosterlynck, Patrik",
+      "type": "Researcher",
+      "orcid": "0000-0002-5712-0770"
+    },
+    {
+      "name": "Oosterlynck, Patrik",
+      "type": "Researcher",
+      "orcid": "0000-0002-5712-0770"
+    }
   ]
 }
