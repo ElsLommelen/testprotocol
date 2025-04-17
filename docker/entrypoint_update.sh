@@ -2,8 +2,8 @@
 
 git clone --branch=$INPUT_GITHUB_HEAD_REF https://$INPUT_PAT@github.com/$GITHUB_REPOSITORY /update
 cd /update
-git config --global user.email "info@inbo.be"
-git config --global user.name "INBO"
+git config --local user.name "github-actions[bot]"
+git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
 rm .Rprofile
 
@@ -38,18 +38,7 @@ else
   exit 1
 fi
 
-# Diagnostic code before git push
-echo "::group::Git Situation Report"
-Rscript --no-save --no-restore -e 'usethis::git_sitrep()'
-echo "::endgroup::"
-
-# Original git push command
 echo 'git push'
 git remote set-url origin https://x-access-token:${INPUT_PAT}@github.com/${GITHUB_REPOSITORY}.git
-
-echo "::group::Git Situation Report"
-Rscript --no-save --no-restore -e 'usethis::git_sitrep()'
-echo "::endgroup::"
-
 git push -f
 
