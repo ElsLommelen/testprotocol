@@ -1,0 +1,55 @@
+name: PR Review Checks
+
+on:
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  check-approval:
+    runs-on: ubuntu-latest
+    if: github.event.review.state == 'approved'
+    outputs:
+      is-admin: ${{ steps.check-admin.outputs.is_admin }}
+      reviewer: ${{ github.event.review.user.login }}
+    steps:
+      - name: Print review information
+        run: |
+          echo "PR #${{ github.event.pull_request.number }} reviewed by ${{ github.event.review.user.login }}"
+          echo "Review state: ${{ github.event.review.state }}"
+          echo "Review body: ${{ github.event.review.body }}"
+
+      - name: Check admin approval
+        id: check-admin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          REVIEWER: ${{ github.event.review.user.login }}
+        run: |
+          echo "Checking permissions for reviewer: $REVIEWER"
+          
+          # Call GitHub API to get permission level
+          RESPONSE=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+                       "https://api.github.com/repos/$REPO/collaborators/$REVIEWER/permission")
+          
+          echo "API Response (masked for security):"
+          echo "$RESPONSE" | jq 'del(.user.node_id)'
+          
+          PERMISSION=$(echo "$RESPONSE" | jq -r '.permission')
+          echo "Permission level: $PERMISSION"
+          
+          if [ "$PERMISSION" == "admin" ] || [ "$PERMISSION" == "maintain" ] || [ "$PERMISSION" == "owner" ]; then
+            echo "✅ User has admin  or maintain rights"
+            echo "is_admin=true" >> $GITHUB_OUTPUT
+          else
+            echo "ℹ️ User does not have admin or maintain rights"
+            echo "is_admin=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Verification step
+        if: steps.check-admin.outputs.is_admin == 'true'
+        run: |
+          echo "✅ Verification successful - approved by user with sufficient permissions"
+          echo "Reviewer: ${{ github.event.review.user.login }}"
+          echo "Permission: $(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                             "https://api.github.com/repos/${{ github.repository }}/collaborators/${{ github.event.review.user.login }}/permission" | \
+                             jq -r '.permission')"
