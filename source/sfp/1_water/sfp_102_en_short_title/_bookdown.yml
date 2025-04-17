@@ -1,0 +1,33 @@
+book_filename: sfp_102_en_short_title.Rmd
+delete_merged_file: true
+rmd_files:
+- index.Rmd
+- NEWS.md
+- 01_dependencies.Rmd
+- 02_subject.Rmd
+- 03_scope.Rmd
+- 04_principle.Rmd
+- 05_skills.Rmd
+- 06_materials.Rmd
+- 07_workflow.Rmd
+- 08_quality_assurance.Rmd
+- 09_safety.Rmd
+- 10_summary.Rmd
+- 11_references.Rmd
+- 12_appendices.Rmd
+- 13_subprotocols.Rmd
+output_dir: ../../../../docs/sfp/1_water/sfp_102_en_short_title
+language:
+  label:
+    fig: 'Figure '
+    tab: 'Table '
+    eq: 'Equation '
+    thm: 'Theorem '
+    lem: 'Lemma '
+    def: 'Definition '
+    cor: 'Corrolary '
+    prp: 'Proposition '
+    ex: 'Example '
+    proof: 'Proof. '
+    remark: 'Remark. '
+
