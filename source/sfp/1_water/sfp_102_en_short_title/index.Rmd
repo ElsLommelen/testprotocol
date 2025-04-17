@@ -35,6 +35,7 @@ site: bookdown::bookdown_site
 bibliography: references.yaml
 link-citations: TRUE
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/research-institute-for-nature-and-forest.csl
+doi: 10.5072/zenodo.199086
 ---
 
 ```{=html}
