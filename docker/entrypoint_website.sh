@@ -9,6 +9,11 @@ git config --global user.email "41898282+github-actions[bot]@users.noreply.githu
 
 rm .Rprofile
 
+echo '\ntest\n'
+
+TEST=$(Rscript -e 'tinytex::check_installed("booktabs")')
+echo 'booktabs test =' $TEST
+
 echo '\nSession info\n'
 Rscript -e 'sessioninfo::session_info()'
 
