@@ -33,39 +33,6 @@ RUN wget https://github.com/jgm/pandoc/releases/download/3.2/pandoc-3.2-1-amd64.
 ## Copy R profile
 COPY docker/Rprofile.site $R_HOME/etc/Rprofile.site
 
-## Extend the existing TeXLive installation with additional packages needed
-RUN tlmgr update --self && \
-    tlmgr install \
-    booktabs \
-    babel-dutch \
-    babel-english \
-    babel-french \
-    beamer \
-    biblatex \
-    caption \
-    csquotes \
-    footnotehyper \
-    hyphen-dutch \
-    hyphen-french \
-    listings \
-    mathspec \
-    microtype \
-    multirow \
-    natbib \
-    orcidlink \
-    parskip \
-    setspace \
-    soul \
-    svg \
-    times \
-    unicode-math \
-    upquote \
-    xcolor \
-    xurl
-
-## Verify LaTeX packages are available
-RUN kpsewhich booktabs.sty && \
-    echo "LaTeX verification complete"
 
 ## Install R packages
 RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
@@ -74,6 +41,14 @@ COPY renv.lock renv.lock
 RUN R -e "renv::restore()"
 RUN R -e "renv::install(c('reactable', 'zen4R', 'keyring', 'slickR'))"
 RUN R -e "renv::isolate()"
+
+## Install tex packages
+## tinytex package is already in renv.lock, so will be available
+RUN R -e "tinytex::is_tinytex()"
+RUN R -e "tinytex::uninstall_tinytex(force = TRUE)"
+RUN R -e "tinytex::install_tinytex()"
+RUN R -e 'tinytex::tlmgr_install(c("amsmath", "amssymb", "array", "babel-dutch", "babel-english", "babel-french", "beamer", "beamerarticle", "biblatex", "bookmark", "booktabs", "calc", "caption", "csquotes", "dvips", "etoolbox", "fancyvrb", "fontenc", "fontspec", "footnote", "footnotehyper", "geometry", "graphicx", "helvetic", "hyperref", "hyphen-dutch", "hyphen-french", "iftex", "inconsolata", "inputenc", "listings", "lmodern", "longtable", "luatexja-preset", "luatexja-fontspec", "mathspec", "microtype", "multirow", "natbib", "orcidlink", "parskip", "pgfpages", "scrreprt", "selnolig", "setspace", "soul", "svg", "tex", "textcomp", "times", "unicode-math", "upquote", "url", "xcolor", "xeCJK", "xurl"))'
+
 
 ## Copy entrypoint scripts
 COPY docker/entrypoint_website.sh /entrypoint_website.sh
