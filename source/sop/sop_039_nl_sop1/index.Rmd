@@ -34,6 +34,7 @@ site: bookdown::bookdown_site
 bibliography: referenties.yaml
 link-citations: TRUE
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/research-institute-for-nature-and-forest.csl
+doi: 10.5072/zenodo.199046
 ---
 
 ```{=html}
@@ -47,6 +48,7 @@ Niet alle onderdelen zijn altijd van toepassing.
 Laat in die gevallen de titels staan en vermeld expliciet "niet van toepassing".
 -->
 ```
+
 ```{r setup, include=FALSE}
 library(knitr)
 opts_chunk$set(
@@ -94,3 +96,4 @@ rm(revs, fms)
 ```{r results="asis"}
 sprintf("Controleer [deze tabel](../%s.html){target=\"_blank\"} om te zien of een meer recente versie beschikbaar is.", type) |> cat() # nolint
 ```
+
