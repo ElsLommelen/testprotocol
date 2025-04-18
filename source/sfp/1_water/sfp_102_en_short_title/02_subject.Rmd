@@ -7,12 +7,12 @@
 Definitions of terms and abbreviations necessary to understand this document and execute the protocol appropriately.
 -->
 ```
+
 ## Goal and area of application
 
 <!-- description: start -->
 
 <!-- description: end -->
-
 
 ```{=html}
 <!--
