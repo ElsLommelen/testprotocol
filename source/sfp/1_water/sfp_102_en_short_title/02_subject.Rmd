@@ -12,7 +12,7 @@ Definitions of terms and abbreviations necessary to understand this document and
 
 <!-- description: start -->
 
-hier komt de description
+Hier komt de description.
 
 <!-- description: end -->
 
