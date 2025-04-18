@@ -1,7 +1,7 @@
 ### First version of protocol: sfp-102-en
 
 - Title: My very first water protocol
-- Published on: 2025-04-17
+- Published on: 2025-04-18
 - Version number: 2025.01
 - Link to this version: [sfp-102-en version 2025.01](2025.01/index.html)
 
