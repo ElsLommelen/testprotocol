@@ -12,6 +12,8 @@ Definitions of terms and abbreviations necessary to understand this document and
 
 <!-- description: start -->
 
+hier komt de description
+
 <!-- description: end -->
 
 ```{=html}
@@ -22,4 +24,3 @@ Try to describe the objective as generically as possible and avoid project-speci
 Field of application: discuss here under which conditions the protocol can be used.
 -->
 ```
-
