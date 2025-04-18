@@ -64,16 +64,6 @@
       "orcid": "0000-0001-2345-6789"
     },
     {
-      "name": "Van Calster, Hans",
-      "type": "Researcher",
-      "orcid": "0000-0001-8595-8426"
-    },
-    {
-      "name": "Van Calster, Hans",
-      "type": "Researcher",
-      "orcid": "0000-0001-8595-8426"
-    },
-    {
       "name": {
         "given": "Hans",
         "family": "Van Calster"
@@ -83,6 +73,16 @@
       "orcid": "0000-0001-8595-8426",
       "affiliation": "Research Institute for Nature and Forest (INBO)",
       "corresponding": true
+    },
+    {
+      "name": "Van Calster, Hans",
+      "type": "Researcher",
+      "orcid": "0000-0001-8595-8426"
+    },
+    {
+      "name": "Van Calster, Hans",
+      "type": "Researcher",
+      "orcid": "0000-0001-8595-8426"
     },
     {
       "name": "Oosterlynck, Patrik",
