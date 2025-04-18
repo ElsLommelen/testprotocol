@@ -20,7 +20,7 @@ jobs:
           fetch-depth: 2
       - name: Get branch name of latest merged PR targeting main
         run: |
-          RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'inbo/.*$' | awk -F '/' '{print $2}')
+          RECENT_MERGED_BRANCH_NAME=$(git log --merges origin/main --oneline --grep='^Merge' -1 | grep -oe 'ElsLommelen/.*$' | awk -F '/' '{print $2}')
           echo "RECENT_MERGED_BRANCH_NAME=$RECENT_MERGED_BRANCH_NAME" >> $GITHUB_ENV
       - name: test
         run: echo 'branch name =' $RECENT_MERGED_BRANCH_NAME
