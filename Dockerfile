@@ -36,52 +36,33 @@ COPY docker/Rprofile.site $R_HOME/etc/Rprofile.site
 ## Extend the existing TeXLive installation with additional packages needed
 ## see https://github.com/rocker-org/rocker-versioned2/blob/master/scripts/install_texlive.sh
 RUN tlmgr update --self && \
-    tlmgr install \
-    amssymb \
-    array \
-    babel-dutch \
-    babel-english \
-    babel-french \
-    beamer \
-    biblatex \
-    booktabs \
-    calc \
-    caption \
-    csquotes \
-    dvips \
-    fontenc \
-    fontspec \
-    footnote \
-    footnotehyper \
-    graphicx \
-    helvetic \
-    hyphen-dutch \
-    hyphen-french \
-    iftex \
-    listings \
-    lmodern \
-    longtable \
-    luatexja-preset \
-    luatexja-fontspec \
-    mathspec \
-    microtype \
-    multirow \
-    natbib \
-    orcidlink \
-    parskip \
-    pgfpages \
-    setspace \
-    soul \
-    scrreprt \
-    selnolig \
-    svg \
-    textcomp \
-    times \
-    unicode-math \
-    upquote \
-    xcolor \
-    xeCJK \
-    xurl
+     tlmgr install \
+     booktabs \
+     babel-dutch \
+     babel-english \
+     babel-french \
+     beamer \
+     biblatex \
+     caption \
+     csquotes \
+     footnotehyper \
+     hyphen-dutch \
+     hyphen-french \
+     listings \
+     mathspec \
+     microtype \
+     multirow \
+     natbib \
+     orcidlink \
+     parskip \
+     setspace \
+     soul \
+     svg \
+     times \
+     unicode-math \
+     upquote \
+     xcolor \
+     xurl
 
 ## Install R packages
 RUN R -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"
