@@ -48,7 +48,7 @@ RUN R -e "tinytex::is_tinytex()"
 RUN R -e "tinytex::uninstall_tinytex(force = TRUE)"
 RUN R -e "tinytex::install_tinytex()"
 RUN R -e 'tinytex::tlmgr_install(c("amsmath", "amssymb", "array", "babel-dutch", "babel-english", "babel-french", "beamer", "beamerarticle", "biblatex", "bookmark", "booktabs", "calc", "caption", "csquotes", "dvips", "etoolbox", "fancyvrb", "fontenc", "fontspec", "footnote", "footnotehyper", "geometry", "graphicx", "helvetic", "hyperref", "hyphen-dutch", "hyphen-french", "iftex", "inconsolata", "inputenc", "listings", "lmodern", "longtable", "luatexja-preset", "luatexja-fontspec", "mathspec", "microtype", "multirow", "natbib", "orcidlink", "parskip", "pgfpages", "scrreprt", "selnolig", "setspace", "soul", "svg", "tex", "textcomp", "times", "unicode-math", "upquote", "url", "xcolor", "xeCJK", "xurl"))'
-
+RUN R -e 'tinytex::tlmgr_path("add")'
 
 ## Copy entrypoint scripts
 COPY docker/entrypoint_website.sh /entrypoint_website.sh
