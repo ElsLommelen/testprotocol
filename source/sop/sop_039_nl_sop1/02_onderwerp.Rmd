@@ -12,4 +12,6 @@ Toepassingsgebied: bespreek hier onder welke condities het protocol kan gebruikt
 
 <!-- description: start -->
 
+Een nieuwe versie.
+
 <!-- description: end -->
