@@ -1,3 +1,10 @@
+### Update of protocol: sop-039-nl
+
+- Title: Test procedure
+- Published on: 2025-04-22
+- Version number: 2025.03
+- Link to this version: [sop-039-nl version 2025.03](2025.03/index.html)
+
 ### First version of protocol: sop-040-nl
 
 - Title: sop
