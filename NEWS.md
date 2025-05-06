@@ -1,3 +1,10 @@
+### First version of protocol: sap-004-nl
+
+- Title: Test
+- Published on: 2025-05-06
+- Version number: 2025.04
+- Link to this version: [sap-004-nl version 2025.04](2025.04/index.html)
+
 ### Update of protocol: sop-039-nl
 
 - Title: Test procedure

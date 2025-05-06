@@ -1,0 +1,34 @@
+book_filename: sap_004_nl_test_sap.Rmd
+delete_merged_file: true
+rmd_files:
+- index.Rmd
+- NEWS.md
+- 01_afhankelijkheden.Rmd
+- 02_onderwerp.Rmd
+- 03_principe.Rmd
+- 04_benodigdheden.Rmd
+- 05_reagentia_oplossingen.Rmd
+- 06_werkwijze.Rmd
+- 07_kalibratie.Rmd
+- 08_kwaliteitszorg.Rmd
+- 09_methoderecept.Rmd
+- 10_veiligheid.Rmd
+- 11_rapportage_archivering.Rmd
+- 12_referenties.Rmd
+- 13_appendices.Rmd
+- 14_subprotocols.Rmd
+output_dir: ../../../docs/sap/sap_004_nl_test_sap
+language:
+  label:
+    fig: 'Figuur '
+    tab: 'Tabel '
+    eq: 'Vergelijking '
+    thm: 'Theorema '
+    lem: 'Lemma '
+    def: 'Definitie '
+    cor: 'Bijgevolg '
+    prp: 'Propositie '
+    ex: 'Voorbeeld '
+    proof: 'Bewijs. '
+    remark: 'Opmerking. '
+
