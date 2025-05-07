@@ -104,6 +104,17 @@
       "orcid": "0000-0002-3481-5684",
       "affiliation": "Research Institute for Nature and Forest (INBO)",
       "corresponding": true
+    },
+    {
+      "name": {
+        "given": "Thierry",
+        "family": "Onkelinx"
+      },
+      "type": "Researcher",
+      "email": "thierry.onkelinx@inbo.be",
+      "orcid": "0000-0001-8804-4216",
+      "affiliation": "Research Institute for Nature and Forest (INBO)",
+      "corresponding": true
     }
   ]
 }
