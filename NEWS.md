@@ -1,3 +1,10 @@
+### Update of protocol: sap-012-nl
+
+- Title: Dit is een test
+- Published on: 2025-05-08
+- Version number: 2025.08
+- Link to this version: [sap-012-nl version 2025.08](2025.08/index.html)
+
 ### First version of protocol: sap-012-nl
 
 - Title: bla bla
