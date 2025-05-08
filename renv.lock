@@ -3748,7 +3748,7 @@
       "RemoteUsername": "inbo",
       "RemoteRepo": "protocolhelper",
       "RemoteRef": "patch-update-doi",
-      "RemoteSha": "273727b3f46e7b811d68f93e0a954341e0021777"
+      "RemoteSha": "94e9d27cc83f97e1b1658bbbfff70afbe49ce99d"
     },
     "ps": {
       "Package": "ps",
