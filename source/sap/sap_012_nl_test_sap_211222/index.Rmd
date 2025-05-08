@@ -27,7 +27,7 @@ keywords: "bla"
 language: nl
 date: "`r Sys.Date()`"
 protocol_code: sap-012-nl
-version_number: "2025.07"
+version_number: '2025.08'
 template_name: sap
 community: "inbo"
 publisher: Instituut voor Natuur- en Bosonderzoek (INBO)

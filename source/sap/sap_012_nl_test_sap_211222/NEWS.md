@@ -1,5 +1,9 @@
 # Wijzigingen t.o.v. vorige versies
 
+## [2025.08](../2025.08/index.html)
+
+-   ...
+
 ## [2025.07](../2025.07/index.html)
 
 -   ...
