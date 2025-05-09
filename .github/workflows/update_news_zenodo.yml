@@ -87,6 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     # Only run this job if update-protocol succeeded
     if: success()
+    name: "auto-approve after update-protocol"
     steps:
       - name: Auto-approve pull request
         uses: actions/github-script@v7
