@@ -11,13 +11,14 @@ permissions:
 jobs:
   check-approval:
     runs-on: ubuntu-latest
-    if: github.event.review.state == 'approved'
+    if: ${{ github.event.review.state == 'approved'
+      && github.event.review.user.login != 'github-actions[bot]'
       && github.event.pull_request.base.ref == 'main'
       && (startsWith(github.event.pull_request.head.ref, 'sfp-')
       || startsWith(github.event.pull_request.head.ref, 'sip-')
       || startsWith(github.event.pull_request.head.ref, 'sop-')
       || startsWith(github.event.pull_request.head.ref, 'sap-')
-      || startsWith(github.event.pull_request.head.ref, 'spp-'))
+      || startsWith(github.event.pull_request.head.ref, 'spp-')) }}
     outputs:
       approvals-ok: ${{ steps.check-admin.outputs.approvals_ok }}
       reviewer: ${{ github.event.review.user.login }}

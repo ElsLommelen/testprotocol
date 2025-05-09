@@ -12,7 +12,6 @@ permissions:
 jobs:
   build:
     if: ${{ !github.event.pull_request.draft
-      &&  github.triggering_actor != 'github-actions[bot]'
       && (startsWith(github.head_ref, 'sfp-')
       || startsWith(github.head_ref, 'sip-')
       || startsWith(github.head_ref, 'sop-')
