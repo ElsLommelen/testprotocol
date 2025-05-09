@@ -82,14 +82,13 @@ jobs:
           PAT: ${{ secrets.PAT }}
           ZENODO_SANDBOX: ${{ secrets.ZENODO_SANDBOX }}
 
-   approve:
+  approve:
     needs: update-protocol
     runs-on: ubuntu-latest
     # Only run this job if update-protocol succeeded
     if: success()
     steps:
       - name: Auto-approve pull request
-        if: success()
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
