@@ -1,3 +1,10 @@
+### First version of protocol: sop-047-nl
+
+- Title: titel
+- Published on: 2025-05-09
+- Version number: 2025.15
+- Link to this version: [sop-047-nl version 2025.15](2025.15/index.html)
+
 ### First version of protocol: sop-046-nl
 
 - Title: titel
