@@ -1,0 +1,98 @@
+---
+title: "titel van het protocol (testje)"
+subtitle: "subtitel"
+author:
+  - name:
+      given: "Hans"
+      family: "Van Calster"
+    email: "hans.vancalster@inbo.be"
+    orcid: "0000-0001-8595-8426"
+    affiliation: "Research Institute for Nature and Forest (INBO)"
+    corresponding: true
+reviewer:
+  - name:
+      given: "Els"
+      family: "Lommelen"
+    email: "els.lommelen@inbo.be"
+    orcid: "0000-0002-3481-5684"
+    affiliation: "Research Institute for Nature and Forest (INBO)"
+file_manager:
+  - name:
+      given: "Thierry"
+      family: "Onkelinx"
+    email: "thierry.onkelinx@inbo.be"
+    orcid: "0000-0001-8804-4216"
+    affiliation: "Research Institute for Nature and Forest (INBO)"
+keywords: "keyword1"
+language: nl
+date: "`r Sys.Date()`"
+protocol_code: sop-042-nl
+version_number: "2025.10"
+template_name: sop
+community: "inbo"
+publisher: Instituut voor Natuur- en Bosonderzoek (INBO)
+site: bookdown::bookdown_site
+bibliography: referenties.yaml
+link-citations: TRUE
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/research-institute-for-nature-and-forest.csl
+---
+
+```{=html}
+<!--
+Instructies bij opmaak van het protocol:
+
+Hieronder vind je de verschillende onderdelen van een protocol.
+In de bijhorende losse `Rmd` bestanden vind je een beschrijving wat er bij elk onderdeel vermeld moet worden.
+Het is in die bestanden dat je moet editeren.
+Niet alle onderdelen zijn altijd van toepassing.
+Laat in die gevallen de titels staan en vermeld expliciet "niet van toepassing".
+-->
+```
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(
+  echo = FALSE,
+  eval = TRUE,
+  dpi = 300,
+  fig.width = 150 / 25.4,
+  fig.height = 100 / 25.4,
+  out.width = "100%",
+  warning = FALSE,
+  error = TRUE,
+  message = FALSE
+)
+library(dplyr)
+library(purrr)
+library(protocolhelper)
+library(pander)
+panderOptions("table.alignment.default", "left")
+metadata <- rmarkdown::metadata
+path_to_protocol <- get_path_to_protocol(metadata$protocol_code)
+type <- get_protocol_type(metadata$protocol_code, auto_identifier = TRUE)
+```
+
+# Metadata {.unnumbered}
+
+```{r metadata-table}
+revs <- map_chr(
+  metadata[["reviewer"]],
+  \(x) x$name |> paste(collapse = " ")
+)
+fms <-  map_chr(
+  metadata[["file_manager"]],
+  \(x) x$name |> paste(collapse = " ")
+)
+tibble(
+  reviewers = revs,
+  documentbeheerder = fms,
+  protocolcode = metadata[["protocol_code"]],
+  versienummer = metadata[["version_number"]],
+  taal = metadata[["language"]]
+) %>%
+  pander::pander(split.tables = Inf)
+rm(revs, fms)
+```
+
+```{r results="asis"}
+sprintf("Controleer [deze tabel](../%s.html){target=\"_blank\"} om te zien of een meer recente versie beschikbaar is.", type) |> cat() # nolint
+```
