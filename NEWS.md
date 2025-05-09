@@ -1,3 +1,10 @@
+### First version of protocol: sop-043-nl
+
+- Title: titel
+- Published on: 2025-05-09
+- Version number: 2025.11
+- Link to this version: [sop-043-nl version 2025.11](2025.11/index.html)
+
 ### First version of protocol: sop-042-nl
 
 - Title: titel van het protocol (testje)
