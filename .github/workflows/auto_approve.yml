@@ -5,6 +5,11 @@ on:
     workflows: ['After review jobs']
     types: [completed]
 
+permissions:
+  contents: write  # This gives write permission to repository contents
+  pull-requests: write  # Adding permission to approve pull requests
+
+jobs:
   approve:
     runs-on: ubuntu-latest
     # Only run this job if After review jobs succeeded
