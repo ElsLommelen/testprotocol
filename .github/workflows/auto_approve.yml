@@ -1,4 +1,4 @@
-name: "auto-approve"
+name: autoapprove
 
 on:
   workflow_run:
