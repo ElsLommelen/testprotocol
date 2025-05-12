@@ -1,3 +1,10 @@
+### First version of protocol: sip-004-nl
+
+- Title: titel
+- Published on: 2025-05-12
+- Version number: 2025.18
+- Link to this version: [sip-004-nl version 2025.18](2025.18/index.html)
+
 ### First version of protocol: sip-003-nl
 
 - Title: titel
