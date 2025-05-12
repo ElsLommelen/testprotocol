@@ -1,7 +1,7 @@
 ### First version of protocol: sip-006-nl
 
 -   Title: titel bla bla bla
--   Published on: 2025-05-12
+-   Published on: 2025-05-11
 -   Version number: 2025.19
 -   Link to this version: [sip-006-nl version 2025.19](2025.19/index.html)
 
