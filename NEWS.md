@@ -1,3 +1,10 @@
+### First version of protocol: sop-049-nl
+
+- Title: titel
+- Published on: 2025-05-14
+- Version number: 2025.20
+- Link to this version: [sop-049-nl version 2025.20](2025.20/index.html)
+
 ### First version of protocol: sip-006-nl
 
 - Title: titel
