@@ -6,7 +6,6 @@ on:
 
 permissions:
   contents: write  # This gives write permission to repository contents
-  pull-requests: write  # Adding permission to approve pull requests
 
 jobs:
   check-approval:
@@ -80,5 +79,5 @@ jobs:
       - name: Update protocol
         uses: ElsLommelen/actions/protocol_update@protocols
         with:
-          PAT: ${{ secrets.PAT }}
+          PAT: ${{ secrets.GITHUB_TOKEN }}
           ZENODO_SANDBOX: ${{ secrets.ZENODO_SANDBOX }}
