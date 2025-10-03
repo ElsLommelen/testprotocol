@@ -1,3 +1,10 @@
+### First version of protocol: sfp-208-nl
+
+- Title: dit is een test voor een bodemprotocol
+- Published on: 2025-10-03
+- Version number: 2025.21
+- Link to this version: [sfp-208-nl version 2025.21](2025.21/index.html)
+
 ### First version of protocol: sop-049-nl
 
 - Title: titel
