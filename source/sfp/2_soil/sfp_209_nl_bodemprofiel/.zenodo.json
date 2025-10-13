@@ -1,0 +1,36 @@
+{
+  "description": "",
+  "title": "Beschrijving van een bodemprofiel.",
+  "upload_type": "publication",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "bodemprofielontwikkeling; munsell; bodemtextuur; bodemdiepte; bodemhorizon; moedermateriaal; drainageklasse"
+  ],
+  "publisher": "Instituut voor Natuur- en Bosonderzoek (INBO)",
+  "contributors": [
+    {
+      "name": "De Vos, Bruno",
+      "affiliation": "Instituut voor Natuur- en Bosonderzoek (INBO)",
+      "orcid": "0000-0001-9523-3453",
+      "type": "contactperson"
+    }
+  ],
+  "creators": [
+    {
+      "name": "De Vos, Bruno",
+      "affiliation": "Instituut voor Natuur- en Bosonderzoek (INBO)",
+      "orcid": "0000-0001-9523-3453"
+    },
+    {
+      "name": "Cools, Nathalie",
+      "affiliation": "Research Institute for Nature and Forest (INBO)",
+      "orcid": "0000-0002-7059-2318"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "inbo"
+    }
+  ]
+}
