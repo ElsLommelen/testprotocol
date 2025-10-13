@@ -1,46 +1,54 @@
 ---
-title: "Beschrijving van een bodemprofiel"
+title: Beschrijving van een bodemprofiel
 author:
-  - name:
-      given: "Bruno"
-      family: "De Vos"
-    email: "bruno.devos@inbo.be"
-    orcid: "0000-0001-9523-3453"
-    affiliation: "Instituut voor Natuur- en Bosonderzoek (INBO)"
-    corresponding: true
-  - name:
-      given: "Nathalie"
-      family: "Cools"
-    email: "nathalie.cools@inbo.be"
-    orcid: "0000-0002-7059-2318"
-    affiliation: "Research Institute for Nature and Forest (INBO)"
+- name:
+    given: Bruno
+    family: De Vos
+  email: bruno.devos@inbo.be
+  orcid: 0000-0001-9523-3453
+  affiliation: Instituut voor Natuur- en Bosonderzoek (INBO)
+  corresponding: true
+- name:
+    given: Nathalie
+    family: Cools
+  email: nathalie.cools@inbo.be
+  orcid: 0000-0002-7059-2318
+  affiliation: Research Institute for Nature and Forest (INBO)
 reviewer:
-  - name:
-      given: "Hans"
-      family: "Van Calster"
-    email: "hans.vancalster@inbo.be"
-    orcid: "0000-0001-8595-8426"
-    affiliation: "Research Institute for Nature and Forest (INBO)"
+- name:
+    given: Hans
+    family: Van Calster
+  email: hans.vancalster@inbo.be
+  orcid: 0000-0001-8595-8426
+  affiliation: Research Institute for Nature and Forest (INBO)
 file_manager:
-  - name:
-      given: "Els"
-      family: "Lommelen"
-    email: "els.lommelen@inbo.be"
-    orcid: "0000-0002-3481-5684"
-    affiliation: "Research Institute for Nature and Forest (INBO)"
-keywords: "bodemprofielontwikkeling; munsell; bodemtextuur; bodemdiepte; bodemhorizon; moedermateriaal; drainageklasse"
+- name:
+    given: Els
+    family: Lommelen
+  email: els.lommelen@inbo.be
+  orcid: 0000-0002-3481-5684
+  affiliation: Research Institute for Nature and Forest (INBO)
+keywords: bodemprofielontwikkeling; munsell; bodemtextuur; bodemdiepte; bodemhorizon;
+  moedermateriaal; drainageklasse
 language: nl
-date: "`r Sys.Date()`"
+date: '`r Sys.Date()`'
 protocol_code: sfp-209-nl
-version_number: "2025.22"
+version_number: '2025.22'
 template_name: sfp
 theme: soil
-community: "inbo"
+community: inbo
 publisher: Instituut voor Natuur- en Bosonderzoek (INBO)
 site: bookdown::bookdown_site
 bibliography: referenties.yaml
-link-citations: TRUE
+link-citations: true
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/research-institute-for-nature-and-forest.csl
+params:
+  dependencies:
+    value:
+    - protocol_code: sfp-208-nl
+      version_number: '2025.01'
+      params: .na
+      appendix: false
 ---
 
 ```{=html}
