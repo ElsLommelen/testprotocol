@@ -12,7 +12,12 @@ Definities van begrippen en afkortingen die noodzakelijk zijn om dit document te
 
 -   *bodemhorizont* Een bodemhorizont of kortweg horizont is een door bodemvormende processen gevormde zone in het bodemprofiel
 
--   *bodemprofiel* Het geheel van bodemhorizonten en bodemlagen vanaf het moedermateriaal tot aan het bodemoppervlak
+-   *bodemprofiel* Het geheel van bodemhorizonten en bodemlagen vanaf het moedermateriaal tot aan het bodemoppervlak.
+    Zie Figuur \@ref(fig:profiel).
+
+```{r bodemprofiel, fig.cap="(ref:profiel)"}
+include_graphics("media/soil_profile.jpg")
+```
 
 ## Doelstelling en toepassingsgebied
 
